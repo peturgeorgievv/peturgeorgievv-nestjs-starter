@@ -1,0 +1,19 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+"""Date custom scalar type"""
+scalar Date
+
+type Query {
+  users: [User!]
+}
+
+type User {
+  createdAt: Date
+  email: String!
+  firstName: String!
+  id: ID!
+  lastName: String!
+  updatedAt: Date
+}
