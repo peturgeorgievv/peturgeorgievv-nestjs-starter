@@ -15,5 +15,6 @@ type User {
   firstName: String!
   id: ID!
   lastName: String!
+  rating: Int
   updatedAt: Date
 }

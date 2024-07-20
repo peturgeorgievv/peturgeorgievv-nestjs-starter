@@ -11,6 +11,22 @@ services:
     volumes:
       - my_postgres_data:/var/lib/postgresql/data # Persist data even when container shuts down
       - ./scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
+  redis:
+    image: redis:latest
+    command: redis-server
+    volumes:
+      - redis:/var/lib/redis
+      - redis-config:/usr/local/etc/redis/redis.conf
+    ports:
+      - 6379:6379
+    networks:
+      - redis-network
 
 volumes:
   my_postgres_data:
+  redis:
+  redis-config:
+
+networks:
+  redis-network:
+    driver: bridge
