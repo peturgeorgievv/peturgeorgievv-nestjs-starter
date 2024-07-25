@@ -6,12 +6,14 @@ import { DbModule } from './db/db.module';
 import { ConfigModule } from '@nestjs/config';
 import * as Joi from 'joi';
 import { UserModule } from './user/user.module';
+import { ProjectModule } from './project/project.module';
 
 @Module({
   imports: [
     GraphqlModule,
     DbModule,
     UserModule,
+    ProjectModule,
     ConfigModule.forRoot({
       validationSchema: Joi.object({
         DB_HOST: Joi.string().required(),

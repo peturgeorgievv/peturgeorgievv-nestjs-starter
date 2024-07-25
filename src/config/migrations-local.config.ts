@@ -5,6 +5,7 @@ export default new DataSource({
   host: 'localhost',
   port: 5432,
   username: 'postgres',
+  synchronize: false,
   password: 'root',
   database: 'peturgeorgievv-nestjs-starter',
   migrations: ['src/db/migrations/*{.ts,.js}'],
